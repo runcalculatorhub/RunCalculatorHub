@@ -1,0 +1,496 @@
+Build a clean, fast, SEO-focused running tools website. This site is NOT a blog-heavy brand site. It is a simple utility website whose main purpose is to rank for running calculator and pace-related searches on Google.
+
+PROJECT GOAL
+Create a lightweight, modern, mobile-friendly running tools website with:
+- a homepage
+- a tools index page
+- separate dedicated pages for each tool
+- SEO-friendly page structure
+- fast loading performance
+- simple clean visual design
+- strong internal linking
+- reusable layout components
+
+BRAND / POSITIONING
+The site should feel like:
+- helpful
+- fast
+- trustworthy
+- simple
+- built for runners
+- not flashy
+- not cluttered
+
+The visual style should look like a modern calculator / micro-SaaS site:
+- white cards
+- light blue accents
+- dark navy text
+- generous spacing
+- rounded corners
+- simple navigation
+- no excessive animations
+- clean typography
+
+SITE NAME
+Use a placeholder site name like:
+RunMetrics
+You can structure the code so I can easily swap the brand/domain name later.
+
+PRIMARY SITE STRUCTURE
+Create these pages:
+
+1. Homepage
+2. Tools index page
+3. Marathon Pace Calculator page
+4. Half Marathon Pace Calculator page
+5. 5K Pace Calculator page
+6. 10K Pace Calculator page
+7. Running Pace Calculator page
+8. Race Time Predictor page
+9. Training Pace Calculator page
+10. Running Pace Converter page
+11. Split Calculator page
+12. Pace Charts page
+13. Simple About page
+14. Simple FAQ page
+
+OPTIONAL FUTURE-READY PAGES
+Set up the structure so I can later add:
+- VO2 Max Calculator
+- Heart Rate Zone Calculator
+- Calories Burned Running Calculator
+- Stride Length Calculator
+- Cadence Calculator
+- Shoe Mileage Tracker
+
+TECH STACK
+Use a modern stack that Replit can build cleanly and quickly.
+Preferred:
+- Next.js or React-based app
+- responsive layout
+- reusable components
+- easy deployment
+- SEO-friendly routing
+
+If easier, a simple static React/Next site is fine.
+Do not overcomplicate the backend.
+This first version can store everything locally in code.
+No login system needed.
+No database needed yet.
+
+CORE DESIGN REQUIREMENTS
+Global design system:
+- Background: very light gray / soft blue-gray
+- Cards: white with subtle border
+- Primary color: deep blue
+- Secondary accent: light blue
+- Text: dark navy / charcoal
+- Border radius: medium to large
+- Shadows: soft and minimal
+- Buttons: rounded, clean, modern
+- Inputs: easy to use on mobile
+
+Header / navigation:
+- Logo on left
+- Nav links: Tools, Pace Charts, Race Predictor, About
+- CTA button on right: Explore Tools
+- Sticky top nav on desktop
+- Mobile hamburger nav on small screens
+
+Homepage should include:
+1. Hero section
+   - Headline: Simple Running Tools for Real Runners
+   - Subheadline explaining calculators, charts, prediction tools
+   - Primary CTA: Start With Tools
+   - Secondary CTA: See Pace Charts
+
+2. Popular Tools section
+   Show featured cards linking to:
+   - Marathon Pace Calculator
+   - Half Marathon Pace Calculator
+   - 5K Pace Calculator
+   - Race Time Predictor
+   - Training Pace Calculator
+   - Running Pace Converter
+
+3. Search bar area
+   Add a visual search input for future use:
+   - placeholder: Search tools, charts, calculators...
+   It does not need full search functionality in v1, but structure it so it can be added later.
+
+4. Why runners use this site section
+   Small 3-column section:
+   - Fast calculations
+   - Mobile-friendly
+   - Built for race planning
+
+5. Internal links section
+   Link to:
+   - Pace Charts
+   - Tools index
+   - FAQ
+
+6. Footer
+   - About
+   - FAQ
+   - Tools
+   - Pace Charts
+   - copyright placeholder
+
+TOOLS INDEX PAGE
+Create a dedicated /tools page with:
+- page title
+- short intro text
+- grid of all tools
+- each tool in its own card
+- 1-2 sentence description per tool
+- internal links to all calculator pages
+
+Each card should include:
+- tool title
+- short description
+- button: Open Tool
+
+TOOL PAGE LAYOUT
+Every tool page should have the same general layout for consistency.
+
+Top section:
+- H1 title
+- short 1-2 sentence explanation
+- breadcrumb navigation
+- optional small trust line like:
+  “Fast, simple, mobile-friendly running calculator”
+
+Main content layout:
+Use a two-column desktop layout:
+Left column:
+- calculator card with inputs
+Right column:
+- results card with outputs
+
+Below the calculator/results area:
+1. short explanation section
+2. FAQ accordion
+3. example use cases
+4. pace chart or data table if relevant
+5. related tools links
+6. optional product recommendation area placeholder for future affiliate links
+
+MOBILE BEHAVIOR
+On mobile:
+- stack everything vertically
+- input fields full width
+- buttons easy to tap
+- result cards appear directly below calculator
+- tables scroll horizontally if needed
+
+DETAILED TOOL REQUIREMENTS
+
+1. MARATHON PACE CALCULATOR
+Route:
+- /marathon-pace-calculator
+
+Inputs:
+- target finish time (hours, minutes, seconds)
+- optional distance preset default = marathon
+- toggle miles / kilometers
+- optional pacing strategy dropdown:
+  - even pace
+  - negative split
+  - conservative start
+
+Outputs:
+- pace per mile
+- pace per kilometer
+- estimated half split
+- split table
+- sample milestone times
+
+Below the calculator include:
+- How to use the marathon pace calculator
+- What is a good marathon pacing strategy?
+- Example for 3:30, 4:00, and 4:30 marathon goals
+- FAQ
+- related links to half marathon and running pace converter
+
+2. HALF MARATHON PACE CALCULATOR
+Route:
+- /half-marathon-pace-calculator
+
+Inputs:
+- target finish time
+- miles/km toggle
+
+Outputs:
+- pace per mile
+- pace per km
+- 5K split estimates
+- mile splits
+
+Below:
+- example target finish times
+- FAQ
+- internal links to 10K and marathon tools
+
+3. 5K PACE CALCULATOR
+Route:
+- /5k-pace-calculator
+
+Inputs:
+- finish time
+- unit toggle
+
+Outputs:
+- pace per mile
+- pace per km
+- split table
+- estimated speed
+
+Below:
+- beginner explanation
+- FAQ
+- related links
+
+4. 10K PACE CALCULATOR
+Route:
+- /10k-pace-calculator
+
+Same concept as 5K page but for 10K.
+
+5. RUNNING PACE CALCULATOR
+Route:
+- /running-pace-calculator
+
+Inputs:
+- distance
+- time
+- unit selection
+
+Outputs:
+- pace per mile
+- pace per km
+- average speed mph
+- average speed kph
+
+This should be one of the most important pages because it is broad and likely to attract the most search traffic.
+
+6. RACE TIME PREDICTOR
+Route:
+- /race-time-predictor
+
+Inputs:
+- recent race distance
+- recent race time
+- target race distance
+
+Outputs:
+- projected finish time for target distance
+- projected pace
+- simple note that this is an estimate, not a guarantee
+
+Use a common running prediction approach such as Riegel formula.
+Display:
+- prediction result
+- estimated pace
+- table of projected times for 5K, 10K, half, marathon
+
+7. TRAINING PACE CALCULATOR
+Route:
+- /training-pace-calculator
+
+Inputs:
+- recent race result or goal race pace
+
+Outputs:
+- easy pace range
+- tempo pace range
+- interval pace range
+- long run pace suggestion
+
+Display these in clear cards with labels.
+
+8. RUNNING PACE CONVERTER
+Route:
+- /running-pace-converter
+
+Inputs:
+- pace per mile
+- pace per km
+- mph
+- kph
+
+Outputs:
+- convert across all formats instantly
+
+This tool should feel very simple and fast.
+
+9. SPLIT CALCULATOR
+Route:
+- /split-calculator
+
+Inputs:
+- total finish goal
+- race distance
+- split interval selection:
+  - mile
+  - km
+  - 5K
+  - custom optional later
+
+Outputs:
+- split table
+- cumulative times
+
+10. PACE CHARTS PAGE
+Route:
+- /pace-charts
+
+This should be a useful static resource page.
+Create sections for:
+- 5K pace chart
+- 10K pace chart
+- half marathon pace chart
+- marathon pace chart
+
+Each section should have:
+- a clean table
+- finish time
+- pace per mile
+- pace per km
+
+Also create anchor links near the top so users can jump to each chart.
+
+SEO REQUIREMENTS
+This is important.
+
+Every page should include:
+- unique title tag
+- unique meta description
+- proper H1
+- clean URL slug
+- helpful intro paragraph
+- structured heading hierarchy (H1, H2, H3)
+- internal linking to related tool pages
+
+Use keyword-focused but natural page titles such as:
+- Marathon Pace Calculator
+- Half Marathon Pace Calculator
+- 5K Pace Calculator
+- Running Pace Calculator
+- Race Time Predictor
+- Running Pace Converter
+
+Make the page content useful and not thin.
+Each page should have enough explanatory text to help SEO, but not feel bloated.
+
+Use schema where reasonable:
+- FAQ schema on pages with FAQ sections
+- basic website schema if easy to implement
+
+CONTENT BLOCKS TO INCLUDE ON EACH PAGE
+Every tool page should include:
+- short tool intro
+- calculator
+- result card
+- FAQ block
+- related tools links
+- optional example section
+
+FAQ examples:
+- How do I calculate running pace?
+- What pace do I need for a 4-hour marathon?
+- What is a good beginner 5K pace?
+- How accurate is a race predictor?
+
+USER EXPERIENCE DETAILS
+- All forms should validate input cleanly
+- Handle invalid times gracefully
+- Make results update quickly
+- Include reset button on calculators
+- Use sensible defaults
+- Use clear labels
+- Show examples in placeholder text where helpful
+- Keep the interface uncluttered
+
+VISUAL LAYOUT DETAILS
+Homepage visual direction:
+- large hero
+- search bar below hero
+- featured tool cards in a grid
+- soft blue illustration-like panel showing “popular tools”
+- clean, airy layout with lots of white space
+
+Tool page visual direction:
+- H1 title at top
+- subtitle below
+- left card for inputs
+- right card for outputs
+- key result metrics displayed in colored stat cards
+- split table below results
+- FAQ accordion below
+- related tools at bottom
+
+Make the tool page feel like:
+- a professional calculator site
+- clean enough to trust
+- modern enough to feel current
+- simple enough to use instantly
+
+COMPONENTS TO BUILD
+Create reusable components for:
+- Header
+- Footer
+- ToolCard
+- CalculatorCard
+- ResultCard
+- FAQAccordion
+- RelatedTools
+- PaceTable
+- Breadcrumbs
+- SectionHeader
+
+DATA / CONTENT HANDLING
+For the pace charts and FAQ content, use local structured data files or arrays so I can edit easily later.
+Organize calculator formulas cleanly in helper files or utility functions.
+
+CODE ORGANIZATION
+Please keep the codebase organized and readable:
+- components folder
+- pages or app routes folder
+- utils/calculator functions
+- data folder for FAQs and pace chart tables
+- styles folder if needed
+
+DELIVERABLES
+I want the first version to be fully functional with:
+- homepage
+- tools page
+- all core tool pages
+- pace charts page
+- about page
+- FAQ page
+- working calculator logic
+- responsive design
+- clean internal linking
+- polished UI
+
+IMPORTANT
+Do not make this look like a generic blog theme.
+Do not over-design it.
+Do not clutter it with ads or popups.
+Do not build unnecessary account features.
+Focus on:
+- speed
+- simplicity
+- clarity
+- utility
+- SEO-friendly structure
+
+FINAL GOAL
+I want this to feel like a legitimate standalone running tools site that could later monetize with:
+- display ads
+- affiliate links
+- ebooks
+- training products
+
+But for now the focus is building a clean, strong, fast first version.
