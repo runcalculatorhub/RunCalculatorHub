@@ -175,22 +175,17 @@ function estimateVDOT(timeSeconds: number, distanceKm: number): number {
 
 export function generatePaceChart(
   distanceMiles: number,
-  distanceKm: number,
   minPaceMinPerMile: number,
   maxPaceMinPerMile: number,
-  stepMinutes: number = 0.5
-): { finishTime: string; pacePerMile: string; pacePerKm: string }[] {
-  const rows: { finishTime: string; pacePerMile: string; pacePerKm: string }[] = [];
+): { finishTime: string; pacePerMile: string }[] {
+  const rows: { finishTime: string; pacePerMile: string }[] = [];
 
-  for (let pace = minPaceMinPerMile; pace <= maxPaceMinPerMile; pace += stepMinutes) {
-    const paceSeconds = pace * 60;
-    const totalSeconds = paceSeconds * distanceMiles;
-    const kmPace = paceSeconds / 1.60934;
+  for (let totalSec = minPaceMinPerMile * 60; totalSec <= maxPaceMinPerMile * 60; totalSec += 15) {
+    const totalRaceSeconds = totalSec * distanceMiles;
 
     rows.push({
-      finishTime: formatTime(totalSeconds),
-      pacePerMile: formatPace(paceSeconds),
-      pacePerKm: formatPace(kmPace),
+      pacePerMile: formatPace(totalSec),
+      finishTime: formatTime(totalRaceSeconds),
     });
   }
 
