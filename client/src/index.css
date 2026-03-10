@@ -9,12 +9,12 @@
   --opaque-button-border-intensity: -8;
   --elevate-1: rgba(0,0,0, .03);
   --elevate-2: rgba(0,0,0, .08);
-  --background: 210 20% 98%;
-  --foreground: 215 25% 16%;
-  --border: 210 15% 91%;
-  --card: 210 18% 96%;
-  --card-foreground: 215 25% 16%;
-  --card-border: 210 15% 93%;
+  --background: 214 32% 96%;
+  --foreground: 222 47% 11%;
+  --border: 214 20% 90%;
+  --card: 0 0% 100%;
+  --card-foreground: 222 47% 11%;
+  --card-border: 214 20% 92%;
   --sidebar: 210 16% 94%;
   --sidebar-foreground: 215 25% 16%;
   --sidebar-border: 210 14% 90%;
@@ -43,7 +43,7 @@
   --chart-3: 190 68% 38%;
   --chart-4: 175 60% 35%;
   --chart-5: 160 55% 32%;
-  --font-sans: Open Sans, sans-serif;
+  --font-sans: Inter, sans-serif;
   --font-serif: Georgia, serif;
   --font-mono: Menlo, monospace;
   --radius: .5rem;
