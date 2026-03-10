@@ -18,6 +18,7 @@ import TrainingPaceCalculator from "@/pages/TrainingPaceCalculator";
 import RunningPaceConverter from "@/pages/RunningPaceConverter";
 import SplitCalculator from "@/pages/SplitCalculator";
 import PaceCharts from "@/pages/PaceCharts";
+import PaceChartDetail from "@/pages/PaceChartDetail";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -38,6 +39,7 @@ function Router() {
         <Route path="/running-pace-converter" component={RunningPaceConverter} />
         <Route path="/split-calculator" component={SplitCalculator} />
         <Route path="/pace-charts" component={PaceCharts} />
+        <Route path="/pace-charts/:slug" component={PaceChartDetail} />
         <Route component={NotFound} />
       </Switch>
     </Layout>
