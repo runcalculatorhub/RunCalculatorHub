@@ -7,7 +7,7 @@ interface SEOProps {
 
 export function useSEO({ title, description }: SEOProps) {
   useEffect(() => {
-    const suffix = " | RunMetrics";
+    const suffix = " | Run Calculator Hub";
     document.title = title + suffix;
 
     let metaDesc = document.querySelector('meta[name="description"]');

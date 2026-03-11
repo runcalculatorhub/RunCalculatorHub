@@ -7,7 +7,7 @@ import { Search, Zap, Smartphone, CalendarCheck, ArrowRight, LineChart, HelpCirc
 
 export default function Home() {
   useSEO({
-    title: "RunMetrics - Running Tools & Pace Calculators",
+    title: "Run Calculator Hub - Running Tools & Pace Calculators",
     description: "Simple, fast running tools for real runners. Pace calculators, race time predictors, split calculators, and pace charts.",
   });
   const featuredTools = tools.filter((t) => t.featured);
@@ -78,7 +78,7 @@ export default function Home() {
 
       <section className="max-w-6xl mx-auto px-4 sm:px-6 mb-16" data-testid="why-section">
         <div className="bg-white rounded-2xl border border-card-border p-8 sm:p-10">
-          <h2 className="text-2xl font-bold text-foreground text-center mb-8">Why Runners Use RunMetrics</h2>
+          <h2 className="text-2xl font-bold text-foreground text-center mb-8">Why Runners Use Run Calculator Hub</h2>
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
             {[
               {

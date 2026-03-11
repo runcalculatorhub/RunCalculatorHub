@@ -189,10 +189,10 @@ export const generalFaqs: FAQ[] = [
   },
   {
     question: "Can I use these tools on mobile?",
-    answer: "Yes! All RunMetrics tools are designed to be fully responsive and easy to use on any device — phone, tablet, or desktop.",
+    answer: "Yes! All Run Calculator Hub tools are designed to be fully responsive and easy to use on any device — phone, tablet, or desktop.",
   },
   {
     question: "Are these calculators free to use?",
-    answer: "Yes, all RunMetrics tools and calculators are completely free. We built them to be fast, simple, and helpful for runners of all levels.",
+    answer: "Yes, all Run Calculator Hub tools and calculators are completely free. We built them to be fast, simple, and helpful for runners of all levels.",
   },
 ];

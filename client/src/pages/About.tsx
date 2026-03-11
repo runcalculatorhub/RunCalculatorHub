@@ -6,8 +6,8 @@ import { Activity, Target, Zap, Heart } from "lucide-react";
 
 export default function About() {
   useSEO({
-    title: "About RunMetrics",
-    description: "RunMetrics provides simple, fast running tools for real runners. Learn about our mission and the tools we offer.",
+    title: "About Run Calculator Hub",
+    description: "Run Calculator Hub provides simple, fast running tools for real runners. Learn about our mission and the tools we offer.",
   });
 
   return (
@@ -16,7 +16,7 @@ export default function About() {
 
       <div className="mb-10">
         <h1 className="text-3xl sm:text-4xl font-bold text-foreground mb-3" data-testid="about-title">
-          About RunMetrics
+          About Run Calculator Hub
         </h1>
         <p className="text-lg text-muted-foreground leading-relaxed max-w-2xl">
           Simple, fast running tools built for real runners.
@@ -27,13 +27,13 @@ export default function About() {
         <h2 className="text-xl font-bold text-foreground mb-4">Our Mission</h2>
         <div className="prose prose-sm text-muted-foreground max-w-none space-y-3">
           <p>
-            RunMetrics was built with one goal: make running calculations fast, simple, and accessible to every runner — from first-time 5K participants to Boston Marathon qualifiers.
+            Run Calculator Hub was built with one goal: make running calculations fast, simple, and accessible to every runner — from first-time 5K participants to Boston Marathon qualifiers.
           </p>
           <p>
             We believe running tools should be straightforward. No sign-ups, no clutter, no endless scrolling through ads. Just enter your data, get your answer, and get back to running.
           </p>
           <p>
-            Every tool on this site is designed to work perfectly on any device. Whether you're checking your pace on race morning or planning splits at your desk, RunMetrics is ready.
+            Every tool on this site is designed to work perfectly on any device. Whether you're checking your pace on race morning or planning splits at your desk, Run Calculator Hub is ready.
           </p>
         </div>
       </div>

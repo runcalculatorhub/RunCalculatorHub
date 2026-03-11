@@ -1,4 +1,4 @@
-# RunMetrics - Running Tools & Pace Calculators
+# Run Calculator Hub - Running Tools & Pace Calculators
 
 ## Project Overview
 A clean, fast, SEO-focused running tools website. Utility-first site designed to rank for running calculator and pace-related searches.
@@ -54,7 +54,8 @@ client/src/
 - All calculations run client-side (no API calls needed)
 
 ## Brand
-- Site name: "RunMetrics" (configurable in Header.tsx and Footer.tsx)
+- Site name: "Run Calculator Hub" (configurable in Header.tsx and Footer.tsx)
+- Domain: runcalculatorhub.com
 - Primary color: Deep blue (HSL 215 84% 42%)
 - Cards: White on light gray-blue background
 - Font: Inter

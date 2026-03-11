@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 export default function FAQ() {
   useSEO({
     title: "Frequently Asked Questions",
-    description: "Common questions about running pace, race predictions, training paces, and using RunMetrics tools.",
+    description: "Common questions about running pace, race predictions, training paces, and using Run Calculator Hub tools.",
   });
 
   return (

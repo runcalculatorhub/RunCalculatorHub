@@ -3,7 +3,7 @@ import { Link, useLocation } from "wouter";
 import { Menu, X, Activity } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-const SITE_NAME = "RunMetrics";
+const SITE_NAME = "Run Calculator Hub";
 
 const navLinks = [
   { label: "Tools", path: "/tools" },

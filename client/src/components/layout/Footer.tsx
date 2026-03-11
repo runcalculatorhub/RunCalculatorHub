@@ -1,7 +1,7 @@
 import { Link } from "wouter";
 import { Activity } from "lucide-react";
 
-const SITE_NAME = "RunMetrics";
+const SITE_NAME = "Run Calculator Hub";
 
 export default function Footer() {
   return (
