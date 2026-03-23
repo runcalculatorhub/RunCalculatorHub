@@ -66,6 +66,7 @@ export default function Footer() {
               {[
                 { label: "All Tools", path: "/tools" },
                 { label: "Pace Charts", path: "/pace-charts" },
+                { label: "Blog", path: "/blog" },
                 { label: "About", path: "/about" },
                 { label: "FAQ", path: "/faq" },
               ].map((link) => (

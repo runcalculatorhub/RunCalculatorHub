@@ -1,11 +1,12 @@
 # Run Calculator Hub - Running Tools & Pace Calculators
 
 ## Project Overview
-A clean, fast, SEO-focused running tools website. Utility-first site designed to rank for running calculator and pace-related searches.
+A clean, fast, SEO-focused running tools website with a database-backed blog. Utility-first site designed to rank for running calculator and pace-related searches.
 
 ## Tech Stack
 - **Frontend**: React + TypeScript, Vite, Wouter (routing), Tailwind CSS, shadcn/ui
-- **Backend**: Express (minimal - serves static frontend)
+- **Backend**: Express with PostgreSQL (Drizzle ORM), session-based admin auth
+- **Database**: PostgreSQL for blog posts and sessions
 - **Styling**: Tailwind CSS with custom theme tokens (Inter font, blue primary, white cards on light gray background)
 
 ## Project Structure
@@ -30,6 +31,11 @@ client/src/
 │   ├── Tools.tsx
 │   ├── About.tsx
 │   ├── FAQ.tsx
+│   ├── Blog.tsx         # Public blog listing
+│   ├── BlogPost.tsx     # Individual blog post (markdown)
+│   ├── Admin.tsx        # Admin auth wrapper
+│   ├── AdminLogin.tsx   # Admin login form
+│   ├── AdminDashboard.tsx # Blog post CRUD management
 │   ├── MarathonPaceCalculator.tsx
 │   ├── HalfMarathonPaceCalculator.tsx
 │   ├── FiveKPaceCalculator.tsx
@@ -40,18 +46,43 @@ client/src/
 │   ├── RunningPaceConverter.tsx
 │   ├── SplitCalculator.tsx
 │   ├── PaceCharts.tsx
+│   ├── PaceChartDetail.tsx
 │   └── not-found.tsx
 ├── utils/
 │   └── calculations.ts  # All running math (pace, splits, Riegel, VDOT)
-└── App.tsx              # Router with all 14 pages
+└── App.tsx              # Router with all pages
+
+server/
+├── index.ts             # Express app setup
+├── routes.ts            # API routes (blog CRUD, admin auth, sitemap, robots.txt)
+├── storage.ts           # Database storage layer (Drizzle)
+├── db.ts                # PostgreSQL connection
+├── vite.ts              # Vite dev server setup
+└── static.ts            # Static file serving (production)
+
+shared/
+└── schema.ts            # Drizzle schema (users, blog_posts) + Zod types
 ```
 
 ## Key Features
 - 10 working calculator tools (marathon, half, 5K, 10K, general pace, race predictor, training paces, pace converter, split calculator, pace charts)
-- SEO: unique titles, meta descriptions, FAQ schema markup, clean URLs
+- Database-backed blog with admin dashboard at /admin
+- SEO: unique titles, meta descriptions, FAQ schema markup, clean URLs, sitemap.xml, robots.txt
 - Mobile-responsive design throughout
 - Reusable component system
-- All calculations run client-side (no API calls needed)
+- Calculator computations run client-side (no API calls needed)
+
+## Blog System
+- **Admin**: Password-protected dashboard at `/admin` (uses ADMIN_PASSWORD env var)
+- **Public**: Blog listing at `/blog`, individual posts at `/blog/:slug`
+- **Content**: Markdown-based content rendered with react-markdown
+- **SEO**: Each post has its own meta description; published posts added to sitemap.xml
+- **Fields**: title, slug, content (markdown), meta description, published status, publish date
+
+## Environment Variables
+- `DATABASE_URL` - PostgreSQL connection string (auto-set by Replit)
+- `ADMIN_PASSWORD` - Password for the /admin blog dashboard
+- `SESSION_SECRET` - Session encryption secret
 
 ## Brand
 - Site name: "Run Calculator Hub" (configurable in Header.tsx and Footer.tsx)
@@ -62,6 +93,7 @@ client/src/
 
 ## Running
 - `npm run dev` starts Express + Vite dev server on port 5000
+- `npm run db:push` syncs database schema
 
 ## Future Expansion Ready
 - Structure supports adding: VO2 Max Calculator, Heart Rate Zone Calculator, Calories Burned Calculator, Stride Length Calculator, Cadence Calculator, Shoe Mileage Tracker

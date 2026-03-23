@@ -8,6 +8,9 @@ import Home from "@/pages/Home";
 import Tools from "@/pages/Tools";
 import About from "@/pages/About";
 import FAQ from "@/pages/FAQ";
+import Blog from "@/pages/Blog";
+import BlogPost from "@/pages/BlogPost";
+import Admin from "@/pages/Admin";
 import MarathonPaceCalculator from "@/pages/MarathonPaceCalculator";
 import HalfMarathonPaceCalculator from "@/pages/HalfMarathonPaceCalculator";
 import FiveKPaceCalculator from "@/pages/FiveKPaceCalculator";
@@ -29,6 +32,9 @@ function Router() {
         <Route path="/tools" component={Tools} />
         <Route path="/about" component={About} />
         <Route path="/faq" component={FAQ} />
+        <Route path="/blog" component={Blog} />
+        <Route path="/blog/:slug" component={BlogPost} />
+        <Route path="/admin" component={Admin} />
         <Route path="/marathon-pace-calculator" component={MarathonPaceCalculator} />
         <Route path="/half-marathon-pace-calculator" component={HalfMarathonPaceCalculator} />
         <Route path="/5k-pace-calculator" component={FiveKPaceCalculator} />

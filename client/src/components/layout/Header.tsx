@@ -8,7 +8,7 @@ const SITE_NAME = "Run Calculator Hub";
 const navLinks = [
   { label: "Tools", path: "/tools" },
   { label: "Pace Charts", path: "/pace-charts" },
-  { label: "Race Predictor", path: "/race-time-predictor" },
+  { label: "Blog", path: "/blog" },
   { label: "About", path: "/about" },
 ];
 

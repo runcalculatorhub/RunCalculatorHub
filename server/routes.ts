@@ -7,7 +7,10 @@ import { insertBlogPostSchema } from "@shared/schema";
 
 const DOMAIN = "https://runcalculatorhub.com";
 
-const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD || "admin123";
+if (!process.env.ADMIN_PASSWORD) {
+  throw new Error("ADMIN_PASSWORD environment variable must be set");
+}
+const ADMIN_PASSWORD = process.env.ADMIN_PASSWORD;
 
 const pages = [
   { path: "/", priority: "1.0", changefreq: "weekly" },
@@ -88,12 +91,13 @@ export async function registerRoutes(
         conString: process.env.DATABASE_URL,
         createTableIfMissing: true,
       }),
-      secret: process.env.SESSION_SECRET || "fallback-secret-change-me",
+      secret: process.env.SESSION_SECRET!,
       resave: false,
       saveUninitialized: false,
       cookie: {
-        secure: false,
+        secure: process.env.NODE_ENV === "production",
         httpOnly: true,
+        sameSite: "lax",
         maxAge: 7 * 24 * 60 * 60 * 1000,
       },
     })
@@ -132,14 +136,22 @@ export async function registerRoutes(
   });
 
   app.get("/api/admin/posts", requireAdmin, async (_req, res) => {
-    const posts = await storage.getAllPosts(false);
-    res.json(posts);
+    try {
+      const posts = await storage.getAllPosts(false);
+      res.json(posts);
+    } catch (e: any) {
+      res.status(500).json({ message: "Failed to fetch posts" });
+    }
   });
 
   app.get("/api/admin/posts/:id", requireAdmin, async (req, res) => {
-    const post = await storage.getPostById(Number(req.params.id));
-    if (!post) return res.status(404).json({ message: "Post not found" });
-    res.json(post);
+    try {
+      const post = await storage.getPostById(Number(req.params.id));
+      if (!post) return res.status(404).json({ message: "Post not found" });
+      res.json(post);
+    } catch (e: any) {
+      res.status(500).json({ message: "Failed to fetch post" });
+    }
   });
 
   app.post("/api/admin/posts", requireAdmin, async (req, res) => {
@@ -154,7 +166,9 @@ export async function registerRoutes(
 
   app.patch("/api/admin/posts/:id", requireAdmin, async (req, res) => {
     try {
-      const post = await storage.updatePost(Number(req.params.id), req.body);
+      const updateSchema = insertBlogPostSchema.partial();
+      const data = updateSchema.parse(req.body);
+      const post = await storage.updatePost(Number(req.params.id), data);
       if (!post) return res.status(404).json({ message: "Post not found" });
       res.json(post);
     } catch (e: any) {
@@ -163,20 +177,32 @@ export async function registerRoutes(
   });
 
   app.delete("/api/admin/posts/:id", requireAdmin, async (req, res) => {
-    const deleted = await storage.deletePost(Number(req.params.id));
-    if (!deleted) return res.status(404).json({ message: "Post not found" });
-    res.json({ success: true });
+    try {
+      const deleted = await storage.deletePost(Number(req.params.id));
+      if (!deleted) return res.status(404).json({ message: "Post not found" });
+      res.json({ success: true });
+    } catch (e: any) {
+      res.status(500).json({ message: "Failed to delete post" });
+    }
   });
 
   app.get("/api/posts", async (_req, res) => {
-    const posts = await storage.getAllPosts(true);
-    res.json(posts);
+    try {
+      const posts = await storage.getAllPosts(true);
+      res.json(posts);
+    } catch (e: any) {
+      res.status(500).json({ message: "Failed to fetch posts" });
+    }
   });
 
   app.get("/api/posts/:slug", async (req, res) => {
-    const post = await storage.getPostBySlug(req.params.slug);
-    if (!post) return res.status(404).json({ message: "Post not found" });
-    res.json(post);
+    try {
+      const post = await storage.getPostBySlug(req.params.slug);
+      if (!post) return res.status(404).json({ message: "Post not found" });
+      res.json(post);
+    } catch (e: any) {
+      res.status(500).json({ message: "Failed to fetch post" });
+    }
   });
 
   return httpServer;
