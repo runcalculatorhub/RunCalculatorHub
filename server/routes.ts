@@ -166,8 +166,15 @@ export async function registerRoutes(
 
   app.patch("/api/admin/posts/:id", requireAdmin, async (req, res) => {
     try {
+      const body = { ...req.body };
+      if (body.publishedAt && typeof body.publishedAt === "string") {
+        body.publishedAt = new Date(body.publishedAt);
+      }
+      if (body.publishedAt === null) {
+        body.publishedAt = null;
+      }
       const updateSchema = insertBlogPostSchema.partial();
-      const data = updateSchema.parse(req.body);
+      const data = updateSchema.parse(body);
       const post = await storage.updatePost(Number(req.params.id), data);
       if (!post) return res.status(404).json({ message: "Post not found" });
       res.json(post);
