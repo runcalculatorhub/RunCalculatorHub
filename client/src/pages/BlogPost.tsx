@@ -4,9 +4,16 @@ import { useSEO } from "@/hooks/use-seo";
 import Breadcrumbs from "@/components/Breadcrumbs";
 import { type BlogPost as BlogPostType } from "@shared/schema";
 import ReactMarkdown from "react-markdown";
-import { Calendar, ArrowLeft } from "lucide-react";
+import { Calendar, ArrowLeft, Calculator } from "lucide-react";
 import { Link } from "wouter";
 import NotFound from "./not-found";
+
+const featuredTools = [
+  { title: "Running Pace Calculator", path: "/running-pace-calculator", description: "Calculate pace, speed, distance, or time for any run." },
+  { title: "Half Marathon Pace Calculator", path: "/half-marathon-pace-calculator", description: "Find your ideal half marathon pace and splits." },
+  { title: "Training Pace Calculator", path: "/training-pace-calculator", description: "Get your easy, tempo, interval, and long run training paces." },
+  { title: "Race Time Predictor", path: "/race-time-predictor", description: "Predict your finish time for any race distance." },
+];
 
 export default function BlogPost() {
   const [, params] = useRoute("/blog/:slug");
@@ -87,6 +94,25 @@ export default function BlogPost() {
               Back to all posts
             </span>
           </Link>
+        </div>
+
+        {/* Related Tools CTA */}
+        <div className="mt-10 bg-gradient-to-br from-primary/5 to-primary/10 rounded-2xl border border-primary/20 p-6 sm:p-8">
+          <div className="flex items-center gap-2 mb-4">
+            <Calculator className="w-5 h-5 text-primary" />
+            <h3 className="text-lg font-semibold text-foreground">Free Running Calculators</h3>
+          </div>
+          <p className="text-sm text-muted-foreground mb-5">Put your training knowledge to work with our free pace tools — no signup required.</p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            {featuredTools.map((tool) => (
+              <Link key={tool.path} href={tool.path}>
+                <div className="bg-white rounded-xl border border-card-border p-4 hover:border-primary/40 hover:shadow-sm transition-all cursor-pointer">
+                  <div className="font-medium text-sm text-foreground mb-1">{tool.title}</div>
+                  <div className="text-xs text-muted-foreground">{tool.description}</div>
+                </div>
+              </Link>
+            ))}
+          </div>
         </div>
       </article>
     </div>
